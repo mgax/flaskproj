@@ -12,4 +12,10 @@ def create_app():
             <p>Welcome to our product!</p>
         """
 
+    @app.route("/api/sum")
+    def sum():
+        a = flask.request.args.get("a", type=int)
+        b = flask.request.args.get("b", type=int)
+        return {"result": a + b}
+
     return app
